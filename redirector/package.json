@@ -1,5 +1,5 @@
 {
-  "name": "@dehu-medium-ifier/redirector",
+  "name": "redirector",
   "version": "0.0.0",
   "description": "Core redirection library, used by implementation packages",
   "keywords": [
@@ -12,21 +12,27 @@
   "license": "ISC",
   "main": "lib/redirector.js",
   "typings": "lib/redirector.d.ts",
-  "directories": {
-    "lib": "lib"
-  },
-  "files": [
-    "lib"
-  ],
+  "module": "lib/redirector.mjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cobular/dehu-medium-ifier.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
-    "tsc": "tsc"
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "test": "jest --config jest.config.js"
   },
-  "bugs": {
-    "url": "https://github.com/Cobular/dehu-medium-ifier/issues"
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "esbuild": "^0.14.42",
+    "prettier": "^2.6.2",
+    "rollup": "^2.75.3",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-esbuild": "^4.9.1",
+    "ts-jest": "^28.0.3",
+    "typescript": "4.7.2"
+  },
+  "prettier": {
+    "semi": true
   }
 }

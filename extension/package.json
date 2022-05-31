@@ -1,0 +1,30 @@
+{
+  "name": "extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "redirector": "file:../redirector"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/chrome": "^0.0.188",
+    "prettier": "2.6.2",
+    "rollup": "2.75.3",
+    "rollup-plugin-bundle-imports": "^1.5.1",
+    "rollup-plugin-chrome-extension": "3.6.9",
+    "rollup-plugin-empty-dir": "^1.0.5"
+  },
+  "prettier": {
+    "semi": true
+  }
+}
