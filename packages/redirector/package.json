@@ -1,0 +1,32 @@
+{
+  "name": "@dehu-medium-ifier/redirector",
+  "version": "0.0.0",
+  "description": "Core redirection library, used by implementation packages",
+  "keywords": [
+    "medium",
+    "redirect",
+    "scribe.rip"
+  ],
+  "author": "Cobular <22972550+Cobular@users.noreply.github.com>",
+  "homepage": "https://github.com/Cobular/dehu-medium-ifier#readme",
+  "license": "ISC",
+  "main": "lib/redirector.js",
+  "typings": "lib/redirector.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cobular/dehu-medium-ifier.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "tsc": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/Cobular/dehu-medium-ifier/issues"
+  }
+}
