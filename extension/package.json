@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "publish": "web-ext build -a ext -s dist",
+    "prepublish": "npm run build",
+    "lint:ext": "web-ext lint -s dist",
+    "prelint": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +26,8 @@
     "rollup": "2.75.3",
     "rollup-plugin-bundle-imports": "^1.5.1",
     "rollup-plugin-chrome-extension": "3.6.9",
-    "rollup-plugin-empty-dir": "^1.0.5"
+    "rollup-plugin-empty-dir": "^1.0.5",
+    "web-ext": "^6.8.0"
   },
   "prettier": {
     "semi": true

@@ -2,12 +2,6 @@ import { ManifestV3 } from "rollup-plugin-chrome-extension";
 
 const manifest: ManifestV3 = {
   manifest_version: 3,
-  content_scripts: [
-    {
-      js: ["medium-content-script.ts"],
-      matches: ["https://*.medium.com/*"],
-    },
-  ],
   action: {
     default_title: "Redirect To Scribe",
   },
@@ -16,11 +10,23 @@ const manifest: ManifestV3 = {
   },
   permissions: ["activeTab", "scripting", "tabs"],
   icons: {
-    16: "icon16.png",
+    16: "images/main/main_logo-16_x_16.png",
+    32: "images/main/main_logo-32_x_32.png",
+    64: "images/main/main_logo-64_x_64.png",
+    128: "images/main/main_logo-128_x_128.png",
   },
   web_accessible_resources: [
     {
-      resources: ["icon16_grey.png"],
+      resources: [
+        "images/grey/logo_grey-16_x_16.png",
+        "images/grey/logo_grey-32_x_32.png",
+        "images/grey/logo_grey-64_x_64.png",
+        "images/grey/logo_grey-128_x_128.png",
+        "images/red/logo_red-16_x_16.png",
+        "images/red/logo_red-32_x_32.png",
+        "images/red/logo_red-64_x_64.png",
+        "images/red/logo_red-128_x_128.png",
+      ],
       matches: ["<all_urls>"],
     }
   ],

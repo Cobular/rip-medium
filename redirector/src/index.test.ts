@@ -16,6 +16,13 @@ test("that on-medium post URLS are detected", () => {
   ).toBe(
     "https://scribe.rip/terra-luna-v2-what-will-happen-to-your-old-luna-what-is-lunc-my-opinion-6159e41d57f0"
   );
+  expect(
+    getRedirectURL(
+      "https://medium.com/@carolinesinders/data-safety-is-personal-safety-e6d1339e6f3c"
+    )
+  ).toBe(
+    "https://scribe.rip/data-safety-is-personal-safety-e6d1339e6f3c"
+  );
 });
 
 test("that non-medium urls are parsed correctly", () => {

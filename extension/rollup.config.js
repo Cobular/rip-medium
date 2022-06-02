@@ -9,9 +9,9 @@ import {
 } from "rollup-plugin-chrome-extension";
 
 export default {
-  input: ["src/manifest.ts", "src/onclick_content_script.ts"],
+  input: ["src/manifest.ts"],
   output: {
-    dir: "dist",
+    dir: `dist_${process.env.MANIFEST_VERSION}`,
     format: "esm",
     chunkFileNames: "chunks\\[name]-[hash].js",
   },
