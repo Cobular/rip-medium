@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import { getRedirectURL } from "redirector";
+  import { getRedirectURL } from "@rip-medium/redirector";
   import Fa from "svelte-fa/src/fa.svelte";
   import { faClipboard } from "@fortawesome/free-regular-svg-icons";
   import { detect } from "detect-browser";

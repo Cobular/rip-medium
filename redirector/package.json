@@ -1,6 +1,6 @@
 {
-  "name": "redirector",
-  "version": "0.0.0",
+  "name": "@rip-medium/redirector",
+  "version": "0.1.1",
   "description": "Core redirection library, used by implementation packages",
   "keywords": [
     "medium",
@@ -20,7 +20,8 @@
   "scripts": {
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "test": "jest --config jest.config.js"
+    "test": "jest --config jest.config.js",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "@types/jest": "^27.5.1",
