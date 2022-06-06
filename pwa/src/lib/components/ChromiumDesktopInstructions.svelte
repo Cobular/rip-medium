@@ -1,13 +1,19 @@
 <script lang="ts">
-  const chromeWebStoreLink: string = "https://chrome.google.com"
+  import InstallInstructions from "./InstallInstructions.svelte";
+
+  const chromeWebStoreLink: string = "https://chrome.google.com";
 </script>
 
-<p>
-  Download the extension from the <a href={chromeWebStoreLink}>chrome web store</a> for
-  simple one-click redirects on any medium blog, no matter the domain!</p>
-<a class="button" href="chromeWebStoreLink">
-  Take me there!
-</a>
+<InstallInstructions maxHeight=100>
+  <p>
+    Download the extension from the <a href={chromeWebStoreLink}>chrome web
+    store</a> for
+    simple one-click redirects on any medium blog, no matter the domain!</p>
+  <a class="button" href="chromeWebStoreLink">
+    Take me there!
+  </a>
+</InstallInstructions>
+
 <style>
     .button {
         font: bold 11px Arial;

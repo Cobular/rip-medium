@@ -3,6 +3,9 @@
     from "./MiniBrowserInstallInstruction.svelte";
 </script>
 
+<p>
+  &emsp; In Other Browsers...
+</p>
 <div class="grid">
   <MiniBrowserInstallInstruction
     title="Extension - Chromium">
@@ -40,5 +43,13 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+
+  ul {
+    align-self: baseline;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 </style>

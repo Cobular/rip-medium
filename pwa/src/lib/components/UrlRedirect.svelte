@@ -4,6 +4,7 @@
   import Fa from "svelte-fa/src/fa.svelte";
   import { faClipboard } from "@fortawesome/free-regular-svg-icons";
   import { detect } from "detect-browser";
+  import { browser } from '$app/env';
 
   const {
     os,
@@ -54,10 +55,10 @@
 {/if}
 
 <form on:submit|preventDefault={urlSubmit}>
-  <label for="url">Medium URL</label>
+  <label for="url">Paste a URL here: </label>
 
   <!--  The clipboard reading API isn't supported on FF -->
-  {#if name !== "firefox"}
+  {#if browser && name !== "firefox"}
     <button on:click={() =>
     console.log(navigator.clipboard.readText())} type="button">
       <Fa icon={faClipboard} />
@@ -90,5 +91,14 @@
   .message {
     color: darkseagreen;
     border-color: darkseagreen;
+  }
+
+  form {
+    display: flex;
+    gap: 5px;
+  }
+
+  input {
+    flex-grow: 1;
   }
 </style>

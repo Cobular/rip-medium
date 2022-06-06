@@ -34,7 +34,9 @@
     "sass": "^1.49.11",
     "@rip-medium/redirector": "^0.1.1",
     "svelte-fa": "^2.4.0",
-    "@fortawesome/free-regular-svg-icons": "^5.15.4"
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "svelte-collapse": "^0.1.1"
   },
   "type": "module"
 }
