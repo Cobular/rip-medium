@@ -5,9 +5,9 @@
   let open = false;
 </script>
 
-<InstallInstructions>
-  <p>There's also an extension for chrome, but it doesn't work on
-    firefox right now.
+<InstallInstructions maxHeight="125">
+  <p>There's also an extension for Chrome, but it doesn't work on
+    Firefox right now.
     <button on:click={() => open = !open}>
       (more info)
     </button>

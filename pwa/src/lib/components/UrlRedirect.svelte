@@ -55,21 +55,23 @@
 {/if}
 
 <form on:submit|preventDefault={urlSubmit}>
-  <label for="url">Paste a URL here: </label>
+  <label for="url"><b>Paste a URL here: </b></label>
 
   <!--  The clipboard reading API isn't supported on FF -->
-  {#if browser && name !== "firefox"}
-    <button on:click={() =>
+  <div>
+    {#if browser && name !== "firefox"}
+      <button on:click={() =>
     console.log(navigator.clipboard.readText())} type="button">
-      <Fa icon={faClipboard} />
-    </button>
-  {/if}
+        <Fa icon={faClipboard} />
+      </button>
+    {/if}
 
-  <input bind:value={urlField} id="url" name="url" placeholder="https://..."
-         required type="url" />
-  <button type="submit">
-    Go!
-  </button>
+    <input bind:value={urlField} id="url" name="url" placeholder="https://..."
+           required type="url" />
+    <button type="submit">
+      Go!
+    </button>
+  </div>
 </form>
 
 {#if message !== undefined}
@@ -96,9 +98,21 @@
   form {
     display: flex;
     gap: 5px;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 5px;
   }
 
   input {
     flex-grow: 1;
+    //height: ;
   }
 </style>

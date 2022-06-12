@@ -1,1 +1,66 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+@font-face {
+  font-display: swap;
+  font-family: et-book;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/et-book/normal/et-book-roman-line-figures.eot);
+  src: url(/fonts/et-book/normal/et-book-roman-line-figures.eot) format("embedded-opentype"), url(/fonts/et-book/normal/et-book-roman-line-figures.woff) format("woff"), url(/fonts/et-book/normal/et-book-roman-line-figures.ttf) format("truetype"), url(/fonts/et-book/normal/et-book-roman-line-figures.svg) format("svg")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: et-book;
+  font-style: italic;
+  font-weight: 400;
+  src: url(/fonts/et-book/italics/et-book-display-italic-old-style-figures.eot);
+  src: url(/fonts/et-book/italics/et-book-display-italic-old-style-figures.eot) format("embedded-opentype"), url(/fonts/et-book/italics/et-book-display-italic-old-style-figures.woff) format("woff"), url(/fonts/et-book/italics/et-book-display-italic-old-style-figures.ttf) format("truetype"), url(/fonts/et-book/italics/et-book-display-italic-old-style-figures.svg) format("svg")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: et-book;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/et-book/bold/et-book-bold-line-figures.eot);
+  src: url(/fonts/et-book/bold/et-book-bold-line-figures.eot) format("embedded-opentype"), url(/fonts/et-book/bold/et-book-bold-line-figures.woff) format("woff"), url(/fonts/et-book/bold/et-book-bold-line-figures.ttf) format("truetype"), url(/fonts/et-book/bold/et-book-bold-line-figures.svg) format("svg")
+}
+
+@font-face {
+  font-display: swap;
+  font-family: et-book-roman-old-style;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/et-book/old-normal/et-book-roman-old-style-figures.eot);
+  src: url(/fonts/et-book/old-normal/et-book-roman-old-style-figures.eot) format("embedded-opentype"), url(/fonts/et-book/old-normal/et-book-roman-old-style-figures.woff) format("woff"), url(/fonts/et-book/old-normal/et-book-roman-old-style-figures.ttf) format("truetype"), url(/fonts/et-book/old-normal/et-book-roman-old-style-figures.svg) format("svg")
+}
+
+html {
+  font-size: 18px;
+}
+@media (max-width: 900px) {
+  html { font-size: 16px; }
+}
+@media (max-width: 500px) {
+  html { font-size: 16px; }
+}
+
+* {
+  font-family: et-book, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+h3 {
+  font-style: italic;
+}
+
+:root {
+  background-color: #fffff8
+}

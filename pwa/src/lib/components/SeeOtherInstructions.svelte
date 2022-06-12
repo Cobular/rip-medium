@@ -9,44 +9,37 @@
 <div class="grid">
   <MiniBrowserInstallInstruction
     title="Extension - Chromium">
-    An extension exists for all major Chromium browsers:
-    <ul>
-      <li>
-        Chrome
-      </li>
-      <li>
-        New Edge
-      </li>
-      <li>
-        Opera
-      </li>
-      <li>
-        Brave
-      </li>
-    </ul>
-    The extension provides a handy button to easily redirect any medium post to
-    scribe.rip and provides indication as to when the page you're on is a
-    medium post.
+    <p>
+      An extension exists for all major Chromium browsers.
+    </p>
+    <p>
+      The extension provides a handy button to easily redirect any medium post
+      to scribe.rip and provides indication as to when the page you're on is a
+      medium post.
+    </p>
   </MiniBrowserInstallInstruction>
   <MiniBrowserInstallInstruction
-    title="PWA / Add to Homescreen - Chrome on Android">
-    For Android Chrome, an installed PWA (when you add the app to your
-    homescreen) can add itself as a share target to the share menu for, among
-    other things, text!
-    <br />
-    This means you can choose to share a link from any share button to this
-    app and it will automatically open a new tab to the scribe.rip page!
+    title="PWA / Add to Homescreen<br/>Chrome on Android">
+    <p>
+      On Android, add this site as a PWA (install it to your homescreen).
+    </p>
+    <p>
+      Then, it will appear in the share menu for links and convert them for
+      you automatically!
+    </p>
   </MiniBrowserInstallInstruction>
 </div>
 
 <style lang="scss">
   .grid {
     display: grid;
+    gap: 20px;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
-  }
 
-  ul {
-    align-self: baseline;
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
   }
 
   p {

@@ -26,7 +26,6 @@
   .loading-helper {
     margin: 0;
     max-height: 0;
-    //overflow: hidden;
     transition: max-height 0.5s;
   }
 </style>

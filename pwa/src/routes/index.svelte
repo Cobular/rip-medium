@@ -48,12 +48,8 @@
 
 
 <main>
-  <h1>
-    R.I.P Medium
-  </h1>
-
   <section id="what">
-    <h3>What?</h3>
+    <h2>What?</h2>
     <p>
       Tools for redirecting blog posts on medium.com to
       <a href="https://scribe.rip/">scribe.rip</a>,
@@ -63,7 +59,7 @@
   </section>
 
   <section id="how">
-    <h3>How?</h3>
+    <h2>How?</h2>
     <UrlRedirect />
     {#if os === "Android OS" && name === "chrome"}
       <p>Or...</p>
@@ -84,10 +80,10 @@
 
 
   <section id="why">
-    <h3>
+    <h2>
       Why?
-    </h3>
-    <p>From the <a href="">scribe.rip FAQ:</a></p>
+    </h2>
+    <p>From the <a href="https://scribe.rip/faq">scribe.rip FAQ:</a></p>
     <ul>
       <li>You believe in an <a
         href="http://scripting.com/liveblog/users/davewiner/2016/01/20/0900.html">open
@@ -113,7 +109,7 @@
 
 <style lang="scss">
   main {
-    width: 100ch;
+    width: 90ch;
     max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
@@ -127,10 +123,5 @@
       margin-bottom: 0;
       margin-top: 0;
     }
-  }
-
-  h3 {
-    margin-top: 0;
-    padding-left: 4ch;
   }
 </style>
