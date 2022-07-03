@@ -3,7 +3,7 @@ import { ManifestV3 } from "rollup-plugin-chrome-extension";
 const manifest: ManifestV3 = {
   manifest_version: 3,
   action: {
-    default_title: "Redirect To Scribe",
+    default_title: "R.I.P Medium",
   },
   background: {
     service_worker: "background.ts",

@@ -12,7 +12,7 @@
   {#if imageData !== undefined}
     <img alt={imageData.alt} src={imageData.src} />
   {/if}
-  <h3>{title}</h3>
+  <h3>{@html title}</h3>
 
   <slot></slot>
 </div>
@@ -21,8 +21,11 @@
   .card {
     display: flex;
     flex-direction: column;
-
-    justify-content: center;
     align-items: center;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 0;
   }
 </style>

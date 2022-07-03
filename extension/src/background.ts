@@ -1,4 +1,4 @@
-import { getRedirectURL } from "redirector";
+import { getRedirectURL } from "@rip-medium/redirector";
 
 chrome.action.onClicked.addListener((tab) => {
   const redirect = getRedirectURL(tab.url);

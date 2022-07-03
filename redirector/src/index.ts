@@ -1,6 +1,6 @@
 const MEDIUM_REGEX =
-  /^https?:\/\/(?!scribe\.rip).*(?<medium_slug>\/[\w-]+[0-9a-f]{12})$/;
-  
+  /^https?:\/\/(?!scribe\.rip).*(?<medium_slug>\/[\w-]+[0-9a-f]{8,12})$/;
+
 export function isMediumPostUrl(url: string): boolean {
   return MEDIUM_REGEX.test(url);
 }

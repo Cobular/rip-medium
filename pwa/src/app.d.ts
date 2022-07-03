@@ -8,3 +8,14 @@ declare namespace App {
 	// interface Session {}
 	// interface Stuff {}
 }
+
+declare module "svelte-collapse" {
+
+  declare interface Params {
+    open?: boolean;
+    duration?: number;
+    easing?: string;
+  }
+  declare function Collapse(node: any, params: Params): { update, destroy };
+  export = Collapse;
+}
