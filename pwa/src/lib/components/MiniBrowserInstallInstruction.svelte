@@ -22,6 +22,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 46ch;
+    flex-basis: 100%;
   }
 
   h3 {
