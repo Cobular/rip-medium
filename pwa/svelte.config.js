@@ -15,16 +15,6 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-
-		vite: {
-			css: {
-				preprocessorOptions: {
-					scss: {
-						additionalData: '@use "src/variables.scss" as *;'
-					}
-				}
-			}
-		}
 	}
 };
 

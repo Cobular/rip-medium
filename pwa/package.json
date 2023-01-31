@@ -2,10 +2,9 @@
   "name": "pwa",
   "version": "0.0.1",
   "scripts": {
-    "start": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "pack": "svelte-kit package",
-    "preview": "svelte-kit preview",
+    "start": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check --plugin-search-dir=. . && eslint .",
@@ -33,7 +32,8 @@
     "svelte-fa": "^3.0.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "svelte-collapse": "^0.1.1"
+    "svelte-collapse": "^0.1.1",
+    "vite": "^4.0.4"
   },
   "type": "module"
 }

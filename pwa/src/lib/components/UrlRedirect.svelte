@@ -4,7 +4,7 @@
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faClipboard } from '@fortawesome/free-regular-svg-icons';
 	import { detect } from 'detect-browser';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 
 	const { os, name } = detect();
 
