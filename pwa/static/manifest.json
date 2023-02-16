@@ -1,8 +1,8 @@
 {
 	"$schema": "https://json.schemastore.org/web-manifest",
-	"short_name": "svelte-pwa",
-	"name": "svelte-test-pwa",
-	"start_url": "/",
+	"short_name": "RIP Medium",
+	"name": "RIP Medium",
+	"start_url": "./?mode=pwa",
 	"icons": [
 		{
 			"src": "windows11/SmallTile.scale-100.png",

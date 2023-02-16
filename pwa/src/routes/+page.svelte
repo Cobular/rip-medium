@@ -9,12 +9,15 @@
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	const { chrome_desktop, chrome_android, firefox, other } = data;
+	const { chrome_desktop, chrome_android, firefox, other, is_pwa } = data;
 </script>
 
 <svelte:head>
 	<title>RIP Medium</title>
-	<meta name="description" content="Tools for redirecting blog posts on medium.com (or a custom domain) to scribe.rip, a faster, less bloated, and more private frontend for the same content you love." />
+	<meta
+		name="description"
+		content="Tools for redirecting blog posts on medium.com (or a custom domain) to scribe.rip, a faster, less bloated, and more private frontend for the same content you love."
+	/>
 </svelte:head>
 
 <main>
@@ -31,8 +34,15 @@
 		<h2>How?</h2>
 		<UrlRedirect show_copy={!firefox} />
 		{#if chrome_android}
-			<p>Or...</p>
-			<ChromeAndroidInstructions />
+			{#if !is_pwa}
+				<p>Or...</p>
+				<ChromeAndroidInstructions />
+			{:else}
+				<p>
+					You're already using the PWA version of this site! You can use the share menu to redirect
+					any medium link to scribe.rip.
+				</p>
+			{/if}
 		{/if}
 
 		{#if chrome_desktop}

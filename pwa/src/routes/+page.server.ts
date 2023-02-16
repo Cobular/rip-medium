@@ -1,17 +1,23 @@
 import { detectOS, browserName } from 'detect-browser';
 import type { PageServerLoad } from './$types';
- 
+
 
 // We want to know if this is chrome desktop, chrome android, firefox of any kind, or something else.
-export const load = (({ params, request }) => {
+export const load = (({ params, request, url }) => {
   const user_agent = request.headers.get('user-agent');
+
+  const is_pwa = url.pathname.includes('?pwa');
+
+  console.debug("is_pwa: " + is_pwa);
+  
 
   if (user_agent === null) {
     return {
       chrome_desktop: false,
       chrome_android: false,
       firefox: false,
-      other: true
+      other: true,
+      is_pwa
     }
   }
 
@@ -23,7 +29,8 @@ export const load = (({ params, request }) => {
       chrome_desktop: false,
       chrome_android: false,
       firefox: false,
-      other: true
+      other: true,
+      is_pwa
     }
   }
 
@@ -31,16 +38,11 @@ export const load = (({ params, request }) => {
   const chrome_android = os === 'Android OS' && browser === 'chrome';
   const firefox = browser === 'firefox';
 
-  console.log("chrome_desktop: " + chrome_desktop);
-  console.log("chrome_android: " + chrome_android);
-  console.log("firefox: " + firefox);
-  console.log("other: " + (!chrome_desktop && !chrome_android && !firefox));
-  
-
   return {
     chrome_desktop: chrome_desktop,
     chrome_android: chrome_android,
     firefox: firefox,
-    other: !chrome_desktop && !chrome_android && !firefox
+    other: !chrome_desktop && !chrome_android && !firefox,
+    is_pwa
   }
 }) satisfies PageServerLoad;
