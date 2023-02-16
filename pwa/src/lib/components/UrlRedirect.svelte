@@ -1,12 +1,11 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 	import { getRedirectURL } from '@rip-medium/redirector';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { faClipboard } from '@fortawesome/free-regular-svg-icons';
-	import { detect } from 'detect-browser';
-	import { browser } from '$app/environment';
+	import Button from './Button.svelte';
 
-	const { os, name } = detect();
+	export let show_copy = false;
 
 	let urlField: string;
 	let error: undefined | string;
@@ -14,15 +13,21 @@
 
 	const errorMessage = 'Please enter a URL to a Medium post!';
 
-	function urlSubmit() {
-		if (typeof urlField !== 'string') {
-			error = errorMessage;
-			return;
-		}
+	function do_error() {
+		error = errorMessage;
+		urlField = '';
 
-		let scribeUrl = getRedirectURL(urlField);
+		setTimeout(() => {
+			error = undefined;
+		}, 2000);
+	}
+
+	function redirect(maybe_url: string) {
+		console.log('redirecting to', maybe_url);
+
+		let scribeUrl = getRedirectURL(maybe_url);
 		if (scribeUrl === false) {
-			error = errorMessage;
+			do_error();
 			return;
 		}
 
@@ -33,21 +38,26 @@
 			}
 		}, 100);
 	}
+
+	function urlSubmit() {
+		if (typeof urlField !== 'string') {
+			do_error();
+			return;
+		}
+
+		redirect(urlField);
+	}
 </script>
 
-{#if error !== undefined}
-	<p class="callout error" transition:fade={{ duration: 150 }}>{error}</p>
-{/if}
-
-<form on:submit|preventDefault={urlSubmit}>
+<form on:submit|preventDefault={urlSubmit} novalidate>
 	<label for="url"><b>&emsp; Paste a URL here: </b></label>
 
 	<!--  The clipboard reading API isn't supported on FF -->
 	<div>
-		{#if browser && name !== 'firefox'}
-			<button on:click={() => console.log(navigator.clipboard.readText())} type="button">
+		{#if show_copy}
+			<Button on:click={async () => redirect(await navigator.clipboard.readText())}>
 				<Fa icon={faClipboard} />
-			</button>
+			</Button>
 		{/if}
 
 		<input
@@ -58,12 +68,16 @@
 			required
 			type="url"
 		/>
-		<button type="submit"> Go! </button>
+		<Button type="submit">Go!</Button>
 	</div>
 </form>
 
+{#if error !== undefined}
+	<p class="callout error" transition:slide={{ duration: 150 }}>{error}</p>
+{/if}
+
 {#if message !== undefined}
-	<p class="callout message" transition:fade={{ duration: 50 }}>{message}</p>
+	<p class="callout message" transition:slide={{ duration: 50 }}>{message}</p>
 {/if}
 
 <style lang="scss">
@@ -94,24 +108,16 @@
 		flex-direction: row;
 		flex-grow: 1;
 		gap: 5px;
-    margin-top: 7px;
+		margin-top: 7px;
 
-    max-width: 80ch;
+		max-width: 80ch;
 	}
 
 	input[type='url'] {
-    width: 100%;
+		width: 100%;
 		padding: 9px 15px;
 		margin: 5px 0;
 		box-sizing: border-box;
 		font-size: 18px;
-	}
-
-  button {
-		padding: 9px 15px;
-		margin: 5px 0;
-		box-sizing: border-box;
-		font-size: 18px;
-    font-weight: bold;
 	}
 </style>

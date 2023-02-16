@@ -4,7 +4,7 @@
     alt: string;
   }
 
-  export let imageData: ImageData | undefined;
+  export let imageData: ImageData | undefined = undefined;
   export let title: string;
 </script>
 

@@ -1,15 +1,21 @@
 <script lang="ts">
-	import { detect } from 'detect-browser';
 	import UrlRedirect from '../lib/components/UrlRedirect.svelte';
 	import ChromeAndroidInstructions from '../lib/components/ChromeAndroidInstructions.svelte';
 	import ChromiumDesktopInstructions from '../lib/components/ChromiumDesktopInstructions.svelte';
 	import FirefoxInstructions from '../lib/components/FirefoxInstructions.svelte';
 	import OtherInstructions from '../lib/components/OtherInstructions.svelte';
 	import SeeOtherInstructions from '../lib/components/SeeOtherInstructions.svelte';
-import { isChromiumBrowser, isDesktopOs } from '$lib/utils/browser-utils';
 
-	const { os, name, type: browserType } = detect();
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+	const { chrome_desktop, chrome_android, firefox, other } = data;
 </script>
+
+<svelte:head>
+	<title>RIP Medium</title>
+	<meta name="description" content="Tools for redirecting blog posts on medium.com (or a custom domain) to scribe.rip, a faster, less bloated, and more private frontend for the same content you love." />
+</svelte:head>
 
 <main>
 	<section id="what">
@@ -23,22 +29,26 @@ import { isChromiumBrowser, isDesktopOs } from '$lib/utils/browser-utils';
 
 	<section id="how">
 		<h2>How?</h2>
-		<UrlRedirect />
-		{#if os === 'Android OS' && name === 'chrome'}
+		<UrlRedirect show_copy={!firefox} />
+		{#if chrome_android}
 			<p>Or...</p>
 			<ChromeAndroidInstructions />
-		{:else if isDesktopOs(os)}
-			{#if isChromiumBrowser(name)}
-				<p>Or...</p>
-				<ChromiumDesktopInstructions />
-			{:else if name === 'firefox'}
-				<FirefoxInstructions />
-			{:else}
-				<OtherInstructions />
-			{/if}
 		{/if}
 
-		<SeeOtherInstructions />
+		{#if chrome_desktop}
+			<p>Or...</p>
+			<ChromiumDesktopInstructions />
+		{/if}
+
+		{#if firefox}
+			<FirefoxInstructions />
+		{/if}
+
+		{#if other}
+			<OtherInstructions />
+		{/if}
+
+		<SeeOtherInstructions is_chormium_browser={chrome_desktop} is_android={chrome_android} />
 	</section>
 
 	<section id="why">

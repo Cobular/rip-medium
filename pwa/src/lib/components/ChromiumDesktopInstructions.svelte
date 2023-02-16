@@ -4,7 +4,7 @@
   const chromeWebStoreLink: string = "https://chrome.google.com";
 </script>
 
-<InstallInstructions maxHeight=100>
+<InstallInstructions>
   <p>
     Download the extension from the <a href={chromeWebStoreLink}>chrome web
     store</a> for
